@@ -21,11 +21,7 @@
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Key Features Breakdown](#key-features-breakdown)
-- [Available Scripts](#available-scripts)
-- [Environment Setup](#environment-setup)
 - [API Integration](#api-integration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -239,35 +235,6 @@ src/
 
 ---
 
-## Available Scripts
-
-### `npm start`
-Runs the app in development mode with hot reload support.
-
-### `npm run build`
-Builds the app for production with optimized bundle.
-
-### `npm test`
-Runs the test suite with React Testing Library.
-
-### `npm run eject`
-**⚠️ Note:** This is a one-way operation. Once executed, you cannot revert.
-Ejects from Create React App to expose all configuration files.
-
----
-
-## Environment Setup
-
-Create a `.env` file in the project root:
-
-```env
-REACT_APP_API_URL=http://localhost:5000
-REACT_APP_SIGNALR_URL=http://localhost:5000/notificationHub
-REACT_APP_FIREBASE_KEY=your_firebase_config_key
-```
-
----
-
 ## API Integration
 
 The frontend communicates with the backend API through:
@@ -287,63 +254,6 @@ The frontend communicates with the backend API through:
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Code Style
-- Use ES6+ features
-- Follow React best practices
-- Use meaningful component and variable names
-- Add comments for complex logic
-- Keep components small and reusable
-
----
-
-## Troubleshooting
-
-### Port 3000 Already in Use
-```bash
-# On Windows
-netstat -ano | findstr :3000
-taskkill /PID <PID> /F
-
-# On macOS/Linux
-lsof -i :3000
-kill -9 <PID>
-```
-
-### Dependencies Installation Issues
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Clear Cache
-```bash
-npm cache clean --force
-```
-
----
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## Support
-
-For support, email support@simbaevents.com or open an issue on GitHub.
-
----
-
 ## Acknowledgments
 
 - Built with [Create React App](https://github.com/facebook/create-react-app)
@@ -357,22 +267,3 @@ For support, email support@simbaevents.com or open an issue on GitHub.
   <p><strong>Made with ❤️ by the SIMBA Events Team</strong></p>
 </div>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
