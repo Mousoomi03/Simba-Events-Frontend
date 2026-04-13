@@ -1,7 +1,7 @@
 # SIMBA Events - Event Management Frontend
 
 <div align="center">
-  <img src="./public/favicon.ico" alt="SIMBA Events Logo" width="100"/>
+  <img src="src/images/simba-dark.png" alt="SIMBA Events Logo" width="100"/>
   <h3>A modern, user-friendly event management platform frontend</h3>
 </div>
 
