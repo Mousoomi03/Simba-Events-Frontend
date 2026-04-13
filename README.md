@@ -18,6 +18,7 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
+- [Setup Backend](#setup-backend-required-for-full-project)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Key Features Breakdown](#key-features-breakdown)
@@ -111,6 +112,26 @@ cd event_management_frontend
 ```bash
 npm install
 ```
+
+### Setup Backend (Required for Full Project)
+
+⚠️ **IMPORTANT**: This frontend application requires the backend server to be running for full functionality.
+
+To get the backend code and set it up properly, refer to:
+- **Backend Repository**: [Simba-Events-Backend](https://github.com/Mousoomi03/Simba-Events-Backend.git)
+
+Clone and set up the backend:
+```bash
+git clone https://github.com/Mousoomi03/Simba-Events-Backend.git
+cd Simba-Events-Backend
+# Follow the backend README for setup instructions
+```
+
+The backend provides APIs for:
+- Event management and booking operations
+- User authentication and authorization
+- Real-time notifications via SignalR
+- Feedback and analytics services
 
 ---
 
