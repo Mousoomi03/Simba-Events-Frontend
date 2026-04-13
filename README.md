@@ -23,6 +23,7 @@
 - [Project Structure](#project-structure)
 - [Key Features Breakdown](#key-features-breakdown)
 - [API Integration](#api-integration)
+- [Contributors](#contributors)
 
 ---
 
@@ -272,6 +273,19 @@ The frontend communicates with the backend API through:
 - `/api/users` - User information
 - `/api/feedback` - Feedback submission and retrieval
 - `SignalR Hub` - Real-time notifications
+
+---
+
+## 👥 Contributors
+
+This project is developed as part of a collaborative learning initiative. Contributions and improvements are welcome!
+
+### Core Contributors
+- **Ishita Gaur** – Ticket Booking, Event Details, Booking Flow
+- **Swathi Kancharla** – Event Management Dashboard
+- **Mousoomi Shit** – Feedback and Replies Module
+- **Akhila Sivayogi** – Login & Registration
+- **BhavyaSree Umitti** – Payment Integration, Notifications, History
 
 ---
 
