@@ -6,9 +6,8 @@
   background: linear-gradient(135deg, #6C4234 0%, #8B5A3C 50%, #6C4234 100%);
   border-bottom: 1px solid var(--simba-brown-dark); 
   box-shadow: var(--shadow-light);
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  position: static;
+  top: auto;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
