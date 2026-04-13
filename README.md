@@ -1,53 +1,361 @@
-# Getting Started with Create React App
+# SIMBA Events - Event Management Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img src="./public/favicon.ico" alt="SIMBA Events Logo" width="100"/>
+  <h3>A modern, user-friendly event management platform frontend</h3>
+</div>
+
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?logo=bootstrap)
+![Axios](https://img.shields.io/badge/Axios-1.13.1-5A29E4)
+![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?logo=node.js)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Key Features Breakdown](#key-features-breakdown)
+- [Available Scripts](#available-scripts)
+- [Environment Setup](#environment-setup)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Overview
+
+**SIMBA Events** is a comprehensive event management platform frontend built with React. It provides a seamless experience for users to discover, book, and manage events while offering organizers powerful tools to create and manage their events. The platform includes real-time notifications, booking management, feedback systems, and detailed analytics dashboards.
+
+---
+
+## Features
+
+### 👥 User Features
+- **Event Discovery** - Browse and search for trending events
+- **Easy Booking** - Simple multi-step booking process with confirmation
+- **Booking History** - Track all past and upcoming bookings
+- **Real-time Notifications** - Get instant updates on booking status and events
+- **Event Reviews** - Rate and review attended events
+- **User Dashboard** - Personalized event recommendations and booking overview
+- **Profile Management** - Update personal information and preferences
+
+### 🎯 Organizer Features
+- **Event Creation** - Create and manage events with detailed information
+- **Event Management** - Update event details, availability, and pricing
+- **Event Analytics** - View booking statistics and event performance
+- **Feedback Dashboard** - Analyze user feedback and ratings
+- **Category Management** - Organize events by categories
+- **Event Deletion** - Remove events when needed
+
+### 💬 General Features
+- **Feedback System** - Submit and view event feedback
+- **Role-based Access** - Different dashboards for users and organizers
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- **Real-time Updates** - Live notifications using SignalR
+- **Dark/Light Theme** - Toggle between themes for comfortable viewing
+- **Authentication** - Secure login and signup with JWT tokens
+- **Confetti Effects** - Celebratory animations on successful bookings
+
+---
+
+## Tech Stack
+
+### Frontend Framework
+- **React** (19.2.0) - UI library
+- **React Router** (7.9.5) - Client-side routing
+- **React Bootstrap** (2.10.10) - UI component library
+
+### State Management & Authentication
+- **AuthContext** - Application-wide authentication state
+- **JWT** - JSON Web Token for secure authentication
+- **Firebase** (12.5.0) - Backend services
+
+### API & Real-time Communication
+- **Axios** (1.13.1) - HTTP client for API requests
+- **SignalR** (9.0.6) - Real-time communication for notifications
+
+### UI & Styling
+- **Bootstrap** (5.3.8) - Responsive design framework
+- **Tailwind** (4.0.0) - Utility-first CSS
+- **React Icons** (5.5.0) - Icon library
+- **Lucide React** (0.552.0) - Modern icon set
+- **Animate.css** (4.1.1) - CSS animations
+
+### Data Visualization & Utilities
+- **Chart.js** (4.5.1) - Charts and graphs
+- **React ChartJS 2** (5.3.1) - React wrapper for Chart.js
+- **React Countup** (6.5.3) - Animated number counters
+- **Canvas Confetti** (1.9.4) - Confetti animations
+- **React Simple Star Rating** (5.1.7) - Star rating component
+- **React Select** (5.10.2) - Advanced select component
+- **React Toastify** (11.0.5) - Toast notifications
+
+---
+
+## Installation
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Clone the Repository
+```bash
+git clone https://github.com/yourusername/event_management_frontend.git
+cd event_management_frontend
+```
+
+### Install Dependencies
+```bash
+npm install
+```
+
+---
+
+## Getting Started
+
+### Start Development Server
+```bash
+npm start
+```
+The application will open at [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+```bash
+npm run build
+```
+Creates an optimized production build in the `build` folder.
+
+### Run Tests
+```bash
+npm test
+```
+Launches the test runner in interactive watch mode.
+
+---
+
+## Project Structure
+
+```
+src/
+├── App.js                          # Main application component
+├── App.css                         # Global styles
+├── AuthContext.js                  # Authentication context provider
+├── index.js                        # React entry point
+├── index.css                       # Global CSS
+│
+├── components/                     # Reusable components
+│   ├── Header.js                   # Navigation header
+│   ├── Footer.js                   # Footer component
+│   ├── LandingPage.js              # Landing page
+│   └── Booking/                    # Booking-related components
+│       ├── BookTicketsPanel.js
+│       ├── EventDetailsCard.js
+│       ├── ImageCarousel.js
+│       └── ...
+│
+├── Booking/                        # Booking feature modules
+│   ├── BookingService.js           # Booking API service
+│   ├── EventDetailsPage.js         # Event details display
+│   ├── ReviewBookingPage.js        # Booking review
+│   ├── BookingConfirmationPage.js  # Confirmation page
+│   ├── TopEvents.js                # Trending events
+│   └── ...
+│
+├── BookingHistory/                 # Booking history & notifications
+│   ├── BookingHistory.jsx          # User's booking history
+│   ├── NotificationTab.js          # Real-time notifications
+│   ├── NotificationContext.js      # Notification state management
+│   ├── SignalService.js            # SignalR integration
+│   └── api.js                      # API calls
+│
+├── Dashboard/                      # User dashboard
+│   ├── UserDashboard.js            # Main dashboard
+│   ├── EventCard.js                # Event card component
+│   └── CategoryList.js             # Category filters
+│
+├── Feedback/                       # Feedback system
+│   ├── SubmitFeedback.js           # Submit feedback form
+│   ├── FeedbackAdmin.js            # Feedback dashboard
+│   ├── BarChart.js                 # Analytics charts
+│   └── ...
+│
+├── OrganiserDashboard/             # Organizer-specific features
+│   ├── Dashboard.jsx               # Organizer dashboard
+│   ├── CreateEventForm.jsx         # Event creation
+│   ├── UpdateEventPage.jsx         # Event editing
+│   ├── EventTable.jsx              # Events list table
+│   └── ...
+│
+├── Login/                          # Authentication pages
+│   ├── Login.js                    # Login form
+│   ├── Signup.js                   # Registration form
+│   ├── ProfilePage.js              # User profile
+│   ├── ProtectedRoute.js           # Route protection
+│   └── Api.js                      # Auth API calls
+│
+└── images/                         # Static images and assets
+```
+
+---
+
+## Key Features Breakdown
+
+### 🔐 Authentication System
+- JWT-based authentication with token storage
+- Protected routes using `ProtectedRoute` component
+- Role-based access control (User/Organizer)
+- Secure logout functionality
+
+### 📅 Event Booking
+- Multi-step booking process with validation
+- Real-time availability checking
+- Booking confirmation with confetti animation
+- Review and cancel bookings
+
+### 🔔 Real-time Notifications
+- SignalR integration for live updates
+- Notification context for global state management
+- Toast notifications for user feedback
+- Booking status updates
+
+### 📊 Analytics & Feedback
+- Bar charts for feedback visualization
+- Star rating system for reviews
+- Feedback filtering and sorting
+- Admin feedback dashboard for organizers
+
+### 📱 Responsive Design
+- Mobile-first approach with Bootstrap
+- Tailwind CSS for utility styling
+- CSS modules for component-scoped styles
+- Optimized for all screen sizes
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode with hot reload support.
 
 ### `npm run build`
+Builds the app for production with optimized bundle.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm test`
+Runs the test suite with React Testing Library.
 
 ### `npm run eject`
+**⚠️ Note:** This is a one-way operation. Once executed, you cannot revert.
+Ejects from Create React App to expose all configuration files.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a `.env` file in the project root:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```env
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_SIGNALR_URL=http://localhost:5000/notificationHub
+REACT_APP_FIREBASE_KEY=your_firebase_config_key
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The frontend communicates with the backend API through:
 
-### Code Splitting
+### API Services
+- **BookingService.js** - Event and booking operations
+- **Login/Api.js** - Authentication endpoints
+- **BookingHistory/api.js** - Booking history and notifications
+- **Axios instances** - Global HTTP client configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Main Endpoints
+- `/api/events` - Event operations
+- `/api/bookings` - Booking management
+- `/api/users` - User information
+- `/api/feedback` - Feedback submission and retrieval
+- `SignalR Hub` - Real-time notifications
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Code Style
+- Use ES6+ features
+- Follow React best practices
+- Use meaningful component and variable names
+- Add comments for complex logic
+- Keep components small and reusable
+
+---
+
+## Troubleshooting
+
+### Port 3000 Already in Use
+```bash
+# On Windows
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+
+# On macOS/Linux
+lsof -i :3000
+kill -9 <PID>
+```
+
+### Dependencies Installation Issues
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Clear Cache
+```bash
+npm cache clean --force
+```
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## Support
+
+For support, email support@simbaevents.com or open an issue on GitHub.
+
+---
+
+## Acknowledgments
+
+- Built with [Create React App](https://github.com/facebook/create-react-app)
+- UI Components from [React Bootstrap](https://react-bootstrap.github.io/)
+- Icons from [React Icons](https://react-icons.github.io/react-icons/) and [Lucide React](https://lucide.dev/)
+- Real-time features powered by [SignalR](https://dotnet.microsoft.com/en-us/apps/aspnet/signalr)
+
+---
+
+<div align="center">
+  <p><strong>Made with ❤️ by the SIMBA Events Team</strong></p>
+</div>
 
 ### Analyzing the Bundle Size
 
