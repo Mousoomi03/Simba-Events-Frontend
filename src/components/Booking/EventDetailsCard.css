@@ -39,3 +39,26 @@
   text-align: right;
   white-space: nowrap;
 }
+
+html[data-theme='dark'] .event-details-card {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme='dark'] .event-details-card h3 {
+  color: var(--simba-off-white);
+}
+
+html[data-theme='dark'] .event-details-card .detail-icon {
+  color: #ffd97a;
+}
+
+html[data-theme='dark'] .event-details-card .detail-label,
+html[data-theme='dark'] .event-details-card .detail-value,
+html[data-theme='dark'] .event-details-card .detail-item {
+  color: #cfcfcf !important;
+}
+
+html[data-theme='dark'] .event-details-card .detail-value {
+  color: #d9d9d9 !important;
+}
+

@@ -57,3 +57,16 @@
   font-size: 1rem;
   /* color: var(--simba-brown-medium); */
 }
+
+html[data-theme='dark'] .page-card {
+  background: linear-gradient(135deg, #412c1c 0%, #5e4330 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme='dark'] .page-card h3 {
+  color: #f2d8b5;
+}
+
+html[data-theme='dark'] .page-card .detail-item {
+  color: #e7d6c6;
+}
